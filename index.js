@@ -276,7 +276,7 @@ const validate = (ctx, next) => {
   const { request, response } = ctx
   let req = request;
   let res = response;
-  debug(`Processing: ${req.method} ${req.originalUrl}`);
+  console.info(`Validating: ${req.method} ${req.originalUrl}`);
 
   if (pathObjects.length === 0) {
     next();
