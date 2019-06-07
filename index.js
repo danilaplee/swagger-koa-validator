@@ -273,7 +273,9 @@ const validateRequest = (req, res, next) => {
 };
 
 const validate = (ctx, next) => {
-  const { req, res } = ctx
+  const { request, response } = ctx
+  let req = request;
+  let res = response;
   debug(`Processing: ${req.method} ${req.originalUrl}`);
 
   if (pathObjects.length === 0) {
