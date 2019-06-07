@@ -180,7 +180,7 @@ const validateResponse = (req, res, next) => {
           err.failedValidation = true;
           err.message = 'Value expected to be an array/object but is not';
           if (options.responseValidationFn) {
-            options.responseValidationFn(req, data, [err]);
+            options.responseValidationFn(req, data, [err], res);
             sendData(res, data, encoding);
             return;
           }
@@ -249,7 +249,7 @@ const validateRequest = (req, res, next) => {
     if (!validation) {
       debug(`  Request validation errors: \n${util.inspect(validator.errors)}`);
       if (options.requestValidationFn) {
-        options.requestValidationFn(req, req.body, validator.errors);
+        options.requestValidationFn(req, req.body, validator.errors, res);
         next();
       } else {
         const err = {
