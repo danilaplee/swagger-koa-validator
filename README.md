@@ -29,12 +29,12 @@ Start using this library with `npm install swagger-koa-validator --save`
 To set up simple validation for your requests and responses:
 ```javascript
 const util = require('util');
-const express = require('express');
+const koa = require('koa');
 const bodyParser = require('body-parser');
-const validator = require('swagger-express-validator');
+const validator = require('swagger-koa-validator');
 const schema = require('./api-schema.json');
 
-const server = express();
+const server = koa();
 server.use(bodyParser.json());
 
 const opts = {
