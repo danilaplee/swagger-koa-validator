@@ -1,0 +1,25 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-param-reassign": 0,
+    "comma-dangle": ["error", {
+      "arrays": "ignore",
+      "objects": "ignore",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }]
+  },
+  "settings": {
+    "import/resolve": {
+      "moduleDirectory": [
+        "node_modules"
+      ]
+    }
+  }
+}

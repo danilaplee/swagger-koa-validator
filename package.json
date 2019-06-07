@@ -1,0 +1,57 @@
+{
+  "name": "swagger-koa-validator",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "description": "Validation middleware for koa that validates request/response against provided swagger spec",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danilaplee/swagger-koa-validator"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha ./test --ui bdd",
+    "lint": "eslint ./",
+    "lint-fix": "eslint ./ --fix"
+  },
+  "keywords": [
+    "validation",
+    "swagger",
+    "middleware",
+    "connect",
+    "koa",
+    "openapi",
+    "express"
+  ],
+  "author": "Danila Plee",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "6.10.0",
+    "debug": "3.2.6",
+    "lodash": "4.17.11",
+    "path-to-regexp": "2.2.1",
+    "validator": "10.11.0"
+  },
+  "devDependencies": {
+    "body-parser": "1.19.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.17.2",
+    "express": "4.17.0",
+    "http-status-codes": "1.3.2",
+    "husky": "1.3.1",
+    "middleware-testlab": "2.2.2",
+    "mocha": "6.1.4",
+    "supertest": "4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
+  }
+}
