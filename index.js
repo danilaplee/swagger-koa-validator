@@ -273,21 +273,24 @@ const validateRequest = (req, res, next) => {
 };
 
 const validate = (ctx, next) => {
-  const { request, response } = ctx
-  let req = request;
-  let res = response;
-  console.info(`Validating: ${req.method} ${req.originalUrl}`);
+  return new Promise(resolve=>{
+    const { request, response } = ctx
+    let req = request;
+    let res = response;
+    console.info(`Processing: ${req.method} ${req.originalUrl}`);
 
-  if (pathObjects.length === 0) {
-    next();
-  } else if (options.validateRequest) {
-    validateRequest(req, res, next);
-  } else if (options.validateResponse) {
-    validateResponse(req, res, next);
-  } else {
-    next();
-  }
+    if (pathObjects.length === 0) {
+      next();
+    } else if (options.validateRequest) {
+      validateRequest(req, res, resolve);
+    } else if (options.validateResponse) {
+      validateResponse(req, res, resolve);
+    } else {
+      next();
+    }
+  }).then(()=>next(ctx))
 };
+
 
 /**
  *
