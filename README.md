@@ -1,9 +1,8 @@
-Swagger Express Validator
+Swagger Koa Validator
 =========================
 
-[![Build Status](https://travis-ci.org/gargol/swagger-express-validator.svg?branch=master)](https://travis-ci.org/gargol/swagger-express-validator)
 
-`swagger-express-validator` is a lightweight middleware for request/response validation based on
+`swagger-koa-validator` is a lightweight middleware for request/response validation based on
 [OpenAPI v2.0](http://swagger.io/specification/) (aka swagger) specification.
 
 The main difference of this package to alternatives like
@@ -12,7 +11,7 @@ configurable and only concentrates on validation against provided schema. You ca
 behavior of invalid validation like returning a 500 or just logging an error to your logger.
 
 ## Requirements
-- express ^4.0.0
+- koa ^2.0.0
 - body-parser ^1.0.0
 
 ## Features
@@ -24,7 +23,7 @@ behavior of invalid validation like returning a 500 or just logging an error to 
 * Support for nullable field validation though `x-nullable` attribute
 
 ## Installation
-Start using this library with `npm install swagger-express-validator --save`
+Start using this library with `npm install swagger-koa-validator --save`
 
 ## Sample use
 To set up simple validation for your requests and responses:
@@ -68,41 +67,14 @@ return server.listen(3000);
 
 ```
 
-## Ajv configuration
-
-`swagger-express-validator` uses Ajv for schema validation under the hood. You can tweak many validation parameters by passing Ajv configuration overrides:
-
-```javascript
-server.use(validator({
-  schema,
-  preserveResponseContentType: false,
-  returnRequestErrors: true,
-  returnResponseErrors: true,
-  validateRequest: true,
-  validateResponse: true,
-  ajvRequestOptions: {
-    coerceTypes: true,
-  },
-  ajvResponseOptions: {
-    coerceTypes: true,
-  },
-}));
-```
-
-See Ajv documentation for supported values.
-## Debugging
-To see debug output use `DEBUG=swagger-express-validator` as an environmental variable when starting
-your project, eg.: `DEBUG=swagger-express-validator node server.js`. To gain more insights
-on how this works see documentation of [debug](https://github.com/visionmedia/debug) library
 
 ## Contributors
 - [Nazar Gargol](https://github.com/gargol)
 - [Isaac Stefanek](https://github.com/iadknet)
 - [James Gregory](https://github.com/jagregory)
 - [Igor Savin](https://github.com/kibertoad)
+- [Danila Plee](https://github.com/danilaplee)
 
 ## Licence
-[MIT](https://github.com/gargol/swagger-express-validator/blob/master/LICENSE)
-
-Special thanks to [@bgaluszka](https://github.com/bgaluszka) for initial inspiration :)
+[MIT](https://github.com/gargol/swagger-koa-validator/blob/master/LICENSE)
 
