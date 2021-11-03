@@ -34,7 +34,7 @@
     "debug": "3.2.6",
     "lodash": "4.17.11",
     "path-to-regexp": "2.2.1",
-    "validator": "10.11.0"
+    "validator": "13.7.0"
   },
   "devDependencies": {
     "body-parser": "1.19.0",
