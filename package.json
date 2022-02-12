@@ -30,7 +30,7 @@
   "author": "Danila Plee",
   "license": "MIT",
   "dependencies": {
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "debug": "3.2.6",
     "lodash": "4.17.11",
     "path-to-regexp": "2.2.1",
